@@ -1,2 +1,2 @@
 # TheForest
-วิเคราะห์อัตราการเพิ่มขึ้นและลดลงของทรัพยากรป่าไม้
+Analyze the rate of increase and decrease of forest resources.
