@@ -1,7 +1,7 @@
 import csv
 
 def theforest():
-    ifile  = open('Database CSV/พื้นที่ป่าประเทศไทยปี 2516 - 2558.csv', 'r')
+    ifile  = open('DatabaseCSV/พื้นที่ป่าประเทศไทยปี 2516 - 2558.csv', 'r')
     reader2 = csv.reader(ifile)
 
     rownum = 0
