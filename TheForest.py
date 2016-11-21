@@ -15,13 +15,8 @@ def theforest():
     reader = csv.reader(ifile)
 
     for row in reader:
-        yeardata.append(row[0])
-        north.append(row[1])
-        northeast.append(row[2])
-        east.append(row[3])
-        central.append(row[4])
-        south.append(row[5])
-
+        yeardata.append(row[0]), north.append(row[1]), northeast.append(row[2]), east.append(row[3]), central.append(row[4]), south.append(row[5])
+        
     for i in north[1:20]:
         i = i.replace(",", "")
         float_north.append(float(i))
@@ -65,19 +60,5 @@ plot.set_xticklabels(plotgraph[0])
 plot.set_yticklabels(('0.00', '10,000,000.00', '20,000,000.00', '30,000,000.00', '40,000,000.00', '50,000,000.00', '60,000,000.00', '70,000,000.00', '80,000,000.00'))
 
 plot.legend((rects1[0], rects2[0], rects3[0], rects4[0], rects5[0]), ('North', 'North East', 'East', 'Central', 'South'))
-
-def autolabel(rects):
-    # attach some text labels
-    for rect in rects:
-        height = rect.get_height()
-        # plot.text(rect.get_x() + rect.get_width()/2., 2.05*height,
-                # '%d' % int(height),
-                # ha='center', va='bottom')
-
-autolabel(rects1)
-autolabel(rects2)
-autolabel(rects3)
-autolabel(rects4)
-autolabel(rects5)
 
 plt.show()
