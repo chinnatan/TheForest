@@ -59,8 +59,18 @@ def second_graph():
 
     return year[2:11], float_budget, non_float_budget
 
+def third_graph():
+    """this function open file, read file and return data it."""
+
+    ifile  = open('DatabaseCSV/สถิติคดีการกระทำผิดกฎหมายเกี่ยวกับการป่าไม้ปี 2557 - 2558.csv', 'r')
+    reader = csv.reader(ifile)
+
+    for row in reader:
+        print(row)
+
 frist_plotgraph = frist_graph() # Call Function
 second_plotgraph = second_graph() # Call Function
+third_plotgraph = third_graph() # Call Function
 
 def theforest():
     """this function will plot graph and show it."""
