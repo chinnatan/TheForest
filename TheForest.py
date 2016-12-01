@@ -45,7 +45,7 @@ def second_graph():
     budget, float_budget = [], []
     non_budget, non_float_budget = [], []
 
-    ifile  = open('DatabaseCSV/พื้นที่ป่าที่ได้รับการฟื้นฟูโดยกรมป่าไม้ปี 2007-2015.csv', 'r')
+    ifile  = open('DatabaseCSV/พื้นที่ป่าที่ได้รับการฟื้นฟูโดยกรมป่าไม้2007-2015.csv', 'r')
     reader = csv.reader(ifile)
 
     for row in reader:
