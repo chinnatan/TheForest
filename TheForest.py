@@ -61,12 +61,16 @@ def second_graph():
 
 def third_graph():
     """this function open file, read file and return data it."""
+    year = []
+    forest, wood = [], []
 
     ifile  = open('DatabaseCSV/สถิติคดีการกระทำผิดกฎหมายเกี่ยวกับการป่าไม้ปี 2557 - 2558.csv', 'r')
     reader = csv.reader(ifile)
 
     for row in reader:
-        print(row)
+        year.append(row[0]), forest.append(row[1]), wood.append(row[2])
+
+    return year[1:12], forest[1:12], wood[1:12]
 
 frist_plotgraph = frist_graph() # Call Function
 second_plotgraph = second_graph() # Call Function
