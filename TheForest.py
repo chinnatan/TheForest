@@ -63,6 +63,7 @@ def third_graph():
     """this function open file, read file and return data it."""
     year = []
     forest, wood = [], []
+    int_forest, int_wood = [], []
 
     ifile  = open('DatabaseCSV/สถิติคดีการกระทำผิดกฎหมายเกี่ยวกับการป่าไม้ปี 2557 - 2558.csv', 'r')
     reader = csv.reader(ifile)
@@ -70,7 +71,13 @@ def third_graph():
     for row in reader:
         year.append(row[0]), forest.append(row[1]), wood.append(row[2])
 
-    return year[1:12], forest[1:12], wood[1:12]
+    for i in forest[1:12]:
+        int_forest.append(int(i))
+
+    for i in wood[1:12]:
+        int_wood.append(int(i))
+
+    return year[1:12], int_forest, int_wood
 
 frist_plotgraph = frist_graph() # Call Function
 second_plotgraph = second_graph() # Call Function
@@ -109,6 +116,20 @@ def theforest():
     plot2.set_xticklabels(second_plotgraph[0])
     plot2.set_yticklabels(('0.00', '10,000.00', '20,000.00', '30,000.00', '40,000.00', '50,000.00', '60,000.00', '70,000.00', '80,000.00', '90,000.00'))
     plot2.legend((rects1[0], rects2[0]), ('Reforestation budget', 'Reforestation non-budgetary funds'))
+
+    third_num_graph = 11
+    third_ind = np.arange(third_num_graph)  # the x locations for the groups
+    
+    # Third Graph
+    fig3, plot3 = plt.subplots()
+    rects1 = plot3.bar(third_ind, third_plotgraph[1], width, color='b')
+    rects2 = plot3.bar(third_ind + width, third_plotgraph[2], width, color='orangered')
+    plot3.set_ylabel('Analyzed')
+    plot3.set_title('Statistics about the offense in the forest.')
+    plot3.set_xticks(third_ind + (width * 1.1))
+    plot3.set_xticklabels(third_plotgraph[0])
+    plot3.set_yticklabels(('0', '50', '100', '150', '200', '250', '300', '350', '400', '450', '500'))
+    plot3.legend((rects1[0], rects2[0]), ('Forest encroachment', 'Wood Processing'))
 
     plt.show()
 
