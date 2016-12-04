@@ -85,6 +85,12 @@ third_plotgraph = third_graph() # Call Function
 
 def theforest():
     """this function will plot graph and show it."""
+    font = {'family': 'serif',
+        'color':  'darkred',
+        'weight': 'normal',
+        'size': 16,
+        }
+
     frist_num_graph = 19
     frist_ind = np.arange(frist_num_graph)  # the x locations for the groups
     width = 0.10       # the width of the bars
@@ -96,7 +102,8 @@ def theforest():
     rects3 = plot.bar(frist_ind + (width * 2), frist_plotgraph[3], width, color='m')
     rects4 = plot.bar(frist_ind + (width * 3), frist_plotgraph[4], width, color='y')
     rects5 = plot.bar(frist_ind + (width * 4), frist_plotgraph[5], width, color='navy')
-    plot.set_ylabel('Analyzed')
+    plot.set_xlabel('Years', fontdict=font)
+    plot.set_ylabel('Forest area (farm)', fontdict=font)
     plot.set_title('Forestry analyzed by region')
     plot.set_xticks(frist_ind + (width * 2.5))
     plot.set_xticklabels(frist_plotgraph[0])
@@ -110,7 +117,8 @@ def theforest():
     fig2, plot2 = plt.subplots()
     rects1 = plot2.bar(second_ind, second_plotgraph[1], width, color='b')
     rects2 = plot2.bar(second_ind + width, second_plotgraph[2], width, color='orangered')
-    plot2.set_ylabel('Analyzed')
+    plot2.set_xlabel('Years', fontdict=font)
+    plot2.set_ylabel('Forest area (farm)', fontdict=font)
     plot2.set_title('Forest areas that have been reclaimed by the forest department.')
     plot2.set_xticks(second_ind + (width * 1.1))
     plot2.set_xticklabels(second_plotgraph[0])
@@ -124,7 +132,8 @@ def theforest():
     fig3, plot3 = plt.subplots()
     rects1 = plot3.bar(third_ind, third_plotgraph[1], width, color='b')
     rects2 = plot3.bar(third_ind + width, third_plotgraph[2], width, color='orangered')
-    plot3.set_ylabel('Analyzed')
+    plot3.set_xlabel('Month/Year', fontdict=font)
+    plot3.set_ylabel('Number (case)', fontdict=font)
     plot3.set_title('Statistics about the offense in the forest.')
     plot3.set_xticks(third_ind + (width * 1.1))
     plot3.set_xticklabels(third_plotgraph[0])
